@@ -11,32 +11,4 @@
         <setting name="jdbcTypeForNull" value="NULL" />
     </settings>
 
-
-	 
-<!-- 	<typeAliases>
-		<typeAlias alias="memberVO" type="com.biz.member.MemberVO"  />
-	
-	</typeAliases>
-	
-	 
-	
-	<environments default="development">
-		<environment id="development">
-			<transactionManager type="JDBC" />
-			<dataSource type="POOLED">
-				<property name="driver" value="${driver}" />
-				<property name="url" value="${url}" />
-				<property name="username" value="${id}" />
-				<property name="password" value="${pw}" />
-			</dataSource>
-		</environment>
-	</environments>
-	
-	
-	<mappers>
-		<mapper resource="config/mybatis/member-map.xml" />
-		<mapper resource="config/mybatis/shop-map.xml" />		
-	</mappers> -->
-	 
-
 </configuration>

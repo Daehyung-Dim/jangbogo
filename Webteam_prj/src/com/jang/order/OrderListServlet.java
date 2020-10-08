@@ -13,43 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-/**
- * Servlet implementation class OrderListServlet
- */
 @WebServlet("/OrderList")
 public class OrderListServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /** 
-     * @see HttpServlet#HttpServlet()
-     */
- 
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		
-		
-		OrderDAO oDAO = new OrderDAO();
-	    ArrayList<orderVO> list=new ArrayList<orderVO>();
-		list=oDAO.selectAll();
-		Gson gson= new Gson();
-		response.setContentType("application/json; encoding=UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		String res=gson.toJson(list);
-		PrintWriter out =response.getWriter();
-		out.println(res);
-	}
+        OrderDAO oDAO = new OrderDAO();
+        ArrayList < orderVO > list = new ArrayList < orderVO > ();
+        list = oDAO.selectAll();
+
+        Gson gson = new Gson();
+        response.setContentType("application/json; encoding = UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        String res = gson.toJson(list);
+        PrintWriter out = response.getWriter();
+        out.println(res);
+    }
 
 }

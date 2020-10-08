@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!--  
-<mapper namespace="userNameSpace">
-<mapper namespace="com.biz.mapper">
- -->
 <mapper namespace="QuestionNameSpace">
-
-	<!-- <resultMap id="question_select_1nn" type="com.jang.order.QuestionVO" 
-		extends="answerMap">
-			<collection property="answerlist" resultMap="answerMap"/>
-			<collection property="codelist" resultMap="code_listMap"/>
-			<collection property="memberlist" resultMap="memberMap"/>
-	</resultMap> -->
 
    <resultMap id="questionMap" type="com.jang.qna.QuestionVO">
       <id property="qSeq" column="q_seq" />
@@ -58,41 +47,20 @@
       <result property="codeListGubunDetail" column="code_list_gubun_detail" />
       <result property="codeListEtc" column="code_list_etc" />
    </resultMap>
-    
-    <!-- /* 답글이없는 문의 리스트 조회 조회할때는 구분이 seq가 아니라 detail한 구분으로 나오도록(조인)*/ -->
+
     <select id="questionSelect" resultMap="questionMap">
       select m.m_Nickname, q.q_Text, cl.code_list_gubun_detail, q.q_regdate from question q, member m, code_list cl
 	where q.m_Seq = m.m_Seq and q.q_Gubun = cl.code_List_Gubun order by q.q_regdate desc
     </select>
-     
-    <!--   /*특정 회원의 문의내역 조회*/-->
+
      <select id="questionOne" resultMap="questionMap">
      select q.q_seq, q.m_seq, q.q_text, q.q_regdate, m.m_nickname from question q, member m
 	where q.m_seq = m.m_seq and q.m_seq = ${value}
     </select> 
-    
-    <!-- /*문의_seq에대한 답변 조회*/ -->
-    <!-- <select id="replyquestionSelect" resultMap="question_select_1nn">
-      select distinct a.a_text, a.a_regdate from answer a, question q
-	where a.m_seq = q.m_seq
-    </select> -->
-    
-    <!-- /*문의 insert*/ -->
+
 	<insert id="insertquestion" parameterType="com.jang.qna.QuestionVO">
 	insert into question(q_seq, m_seq, q_text, q_regdate, q_gubun)
 			values(qu_seq.nextval, 1, #{qText}, sysdate, 'QE')
 	</insert>
-    
-    <!-- /*문의에 대한 답변 insert */ -->
-	  <!-- <insert id="replyinsertquestion" parameterType="com.jang.qna.AnswerVO">
-	insert into answer(a_seq, q_seq, a_text, a_regdate)
-			values(#{aSeq}, #{qSeq}, #{aText}, sysdate)
-	</insert> -->
-	
-	<!-- /*문의 수정*/ -->
-	<!--  <update id="questionUpdate" parameterType="com.jang.qna.QuestionVO">
-	update question set q_text=#{qText}, q_regdate = sysdate, q_gubun= 'QE'
-		  where q_seq = #{qSeq}
-	</update>  -->
-   
+  
 </mapper>   

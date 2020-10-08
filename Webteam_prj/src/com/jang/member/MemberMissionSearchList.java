@@ -13,28 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.jang.order.orderVO;
 
-/**
- * Servlet implementation class MemberMissionSearchList
- */
 @WebServlet("/MemberMissionSearchList")
 public class MemberMissionSearchList extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-  
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		int day = Integer.parseInt(request.getParameter("searchDay"));
-		System.out.println(day);
-		MemberDAO  mDAO = new MemberDAO();
-		ArrayList<orderVO> list=new ArrayList<orderVO>();
-		list=mDAO.memberSearchOrder(day);
-		System.out.println(list.size());
-		
-		
-		Gson gson= new Gson();
-		response.setContentType("application/json; encoding=UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		String res=gson.toJson(list);
-		PrintWriter out =response.getWriter();
-		out.println(res);
-	}
+    private static final long serialVersionUID = 1 L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        int day = Integer.parseInt(request.getParameter("searchDay"));
+        MemberDAO mDAO = new MemberDAO();
+        ArrayList < orderVO > list = new ArrayList < orderVO > ();
+        list = mDAO.memberSearchOrder(day);
+
+        Gson gson = new Gson();
+        response.setContentType("application/json; encoding=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        String res = gson.toJson(list);
+        PrintWriter out = response.getWriter();
+        out.println(res);
+    }
 }

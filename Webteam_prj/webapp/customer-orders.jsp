@@ -52,8 +52,6 @@
             $('#content').keyup();
       });
 
-
-    
         </script>
   </head>
   <body>

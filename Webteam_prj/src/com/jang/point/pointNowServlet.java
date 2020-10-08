@@ -12,25 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-/**
- * Servlet implementation class pointOneServlet
- */
 @WebServlet("/pointOneServlet")
 public class pointNowServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	}*/
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PointDAO dao = new PointDAO();
-		int res = dao.selectNow(4);
-		Gson gson= new Gson();
-		response.setCharacterEncoding("UTF-8");
-		PrintWriter out = response.getWriter();
-		System.out.println(res);
-		out.println(res);
-	}
+    private static final long serialVersionUID = 1L;
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PointDAO dao = new PointDAO();
+        int res = dao.selectNow(4);
+        Gson gson = new Gson();
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println(res);
+    }
 }

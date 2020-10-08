@@ -13,9 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.jang.order.orderVO;
 
-/**
- * Servlet implementation class MemberMissionList
- */
 @WebServlet("/MemberMissionList")
 public class MemberMissionList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,18 +20,15 @@ public class MemberMissionList extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		MemberDAO mDAO = new MemberDAO();
-		
+
 	    ArrayList<orderVO> list=new ArrayList<orderVO>();
 		list=mDAO.memberMissionList();
-		
-		
+
 		Gson gson= new Gson();
 		response.setContentType("application/json; encoding=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		String res=gson.toJson(list);
-		PrintWriter out =response.getWriter();
+		PrintWriter out = response.getWriter();
 		out.println(res);
-		
 	}
-
 }

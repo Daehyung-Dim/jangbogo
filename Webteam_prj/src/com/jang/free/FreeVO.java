@@ -1,6 +1,5 @@
 package com.jang.free;
 
-
 public class FreeVO {
 	private int fSeq;
 	private String fTitle;
@@ -48,5 +47,4 @@ public class FreeVO {
 	public void setfYn(String fYn) {
 		this.fYn = fYn;
 	}
-	
 }

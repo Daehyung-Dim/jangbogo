@@ -24,7 +24,6 @@ public class orderVO {
 	public void setCodeListGubunDetail(String codeListGubunDetail) {
 		this.codeListGubunDetail = codeListGubunDetail;
 	}
-
 	
 	public String getOrderYn() {
 		return orderYn;

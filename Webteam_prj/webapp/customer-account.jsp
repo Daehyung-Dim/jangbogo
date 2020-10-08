@@ -297,7 +297,6 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="member_id"><font color="red">아이디</font></label><br>
- <!-- 아이디 받아오는곳 여기! -->     mggm7800@naver.com   <!-- 아이디잉ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇid -->
                       </div>
                     </div>
                     <div class="col-md-6">
