@@ -119,10 +119,6 @@
                   <h3><a href="team-member.html">윤조원</a></h3>
                   <p class="role">이태원 지역</p>
                   <ul class="social list-inline">
-                <!--     <li class="list-inline-item"><a href="#" class="external facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class="external gplus"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class="external twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class="email"><i class="fa fa-envelope"></i></a></li> -->
                   </ul>
                   <div class="text">
                     <p>이태원이야 말로 내 구역이지!</p>
