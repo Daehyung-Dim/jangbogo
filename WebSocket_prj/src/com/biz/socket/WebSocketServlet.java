@@ -38,7 +38,6 @@ public class WebSocketServlet {
 
 	@OnOpen
 	public void onOpen(Session session) {
-		System.out.println(session);
 		clients.add(session);
 	}
 
